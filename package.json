@@ -3,18 +3,29 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+   "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/turco-vic/API-USERS.git"
   },
-  "keywords": [],
+  "keywords": ["API", "USERS", "Node.js", "Express", "SENAI"],
   "author": "Enzo",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/turco-vic/API-USERS/issues"
   },
   "homepage": "https://github.com/turco-vic/API-USERS#readme",
-  "description": ""
+  "description": "Atividade Back-End sobre API de usuários",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "uuid": "^11.0.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
 }
