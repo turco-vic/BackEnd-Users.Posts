@@ -2,7 +2,6 @@ const User = require("../models/User");
 const UserList = require("../models/UserList");
 const lista = new UserList();
 
-// Adicionando usuários iniciais
 lista.addUser(new User("João Silva", "joao@example.com", 30));
 lista.addUser(new User("Maria Souza", "maria@example.com", 25));
 
