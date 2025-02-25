@@ -6,43 +6,43 @@ lista.addPost(new Post("João Silva", "joao@example.com", 30));
 lista.addPost(new Post("Maria Souza", "maria@example.com", 25));
 
 const router = {
-  getAllUsers: (req, res) => {
-    res.json(lista.getAllUsers());
+  getAllPosts: (req, res) => {
+    res.json(lista.getAllPosts());
   },
 
-  getUserById: (req, res) => {
+  getPostById: (req, res) => {
     try {
-      res.json(lista.getUserById(req.params.id));
+      res.json(lista.getPostById(req.params.id));
     } catch (error) {
-      res.status(404).json({ message: "Usuário não encontrado", error });
+      res.status(404).json({ message: "Publicação não encontrada", error });
     }
   },
 
-  addUser: (req, res) => {
+  addPost: (req, res) => {
     try {
-      const { name, email, age } = req.body;
-      if (!name || !email || age === undefined) {
-        throw new Error("Todos os campos são obrigatórios");
+      const { idUser, like, comment, description, image } = req.body;
+      if (!idUser || like === undefined || comment === undefined) {
+        throw new Error("Preencha os campos necessários");
       }
-      const newUser = new User(name, email, age);
-      lista.addUser(newUser);
-      res.status(201).json(newUser);
+      const newPost = new Post(idUser, like, comment, description, image);
+      lista.addPost(newPost);
+      res.status(201).json(newPost);
     } catch (error) {
       res.status(400).json({ message: error.message, error });
     }
   },
 
-  updateUser: (req, res) => {
+  updatePost: (req, res) => {
     try {
-      res.json(lista.updateUser(req.params.id, req.body));
+      res.json(lista.updatePost(req.params.id, req.body));
     } catch (error) {
-      res.status(404).json({ message: "Erro ao atualizar o usuário", error });
+      res.status(404).json({ message: "Erro ao atualizar a publicação", error });
     }
   },
 
-  deleteUser: (req, res) => {
-    lista.deleteUser(req.params.id);
-    res.status(200).json({ message: "Usuário deletado com sucesso", IdDeletado: req.params.id });
+  deletePost: (req, res) => {
+    lista.deletePost(req.params.id);
+    res.status(200).json({ message: "Publicação deletada com sucesso", IdDeletado: req.params.id });
   }
 };
 
