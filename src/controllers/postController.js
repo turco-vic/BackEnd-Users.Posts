@@ -3,7 +3,7 @@ const PostList = require("../models/PostList");
 const lista = new PostList();
 
 lista.addPost(new Post("", 7000, 300, "Foto do meu jegue", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTHn2XPtCfJ8hxC-SVCxkt0hON36imYCtjMQ&s"));
-lista.addPost(new Post("", 7777, 333, "Minha primeira selfie!", "https://imagens.mdig.com.br/humor/selfies_engracadas_05.jpg"));
+lista.addPost(new Post("", 7777, 333, "Minha primeira selfie!", "https://pbs.twimg.com/media/D2xnHUpUYAEcdE5.jpg"));
 
 const router = {
   getAllPosts: (req, res) => {
