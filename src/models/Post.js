@@ -1,5 +1,5 @@
 const { v4: uuid4 } = require('uuid');
-class User {
+class Post {
     constructor(idUser, like, comment, description, image) {
         this.id = uuid4();
         this.idUser = idUser;
@@ -10,4 +10,4 @@ class User {
     }
 }
 
-module.exports = User;
+module.exports = Post;
