@@ -21,7 +21,7 @@ const router = {
   addPost: (req, res) => {
     try {
       const { idUser, like, comment, description, image } = req.body;
-      if (!idUser || like === undefined || comment === undefined) {
+      if (!idUser || !like || !comment || !description || !image) {
         throw new Error("Preencha os campos necessários");
       }
       const newPost = new Post(idUser, like, comment, description, image);
