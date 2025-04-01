@@ -21,3 +21,7 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`🚀 Servidor rodando em http://localhost:${PORT}`);
 });
+
+//FAZER O RELACIONAMENTO USÚARIO TEM POST
+
+// FAZER UMA ROTA QUE PEGUE OS POSTS DE UM USÚARIO BY ID.
