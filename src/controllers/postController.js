@@ -2,7 +2,7 @@ const PostModel = require('../models/PostModel');
 
 const getAllPosts = async (req, res) => {
   try {
-    const posts = await PostModel.getPosts();
+    const posts = await PostModel.getAllPosts();
     res.json(posts)
   } catch (error) {
     console.error('Erro ao buscar posts:', error);
@@ -35,7 +35,7 @@ const createPost = async (req, res) => {
 const updatePost = async (req, res) => {
   try {
     const { title, content } = req.body;
-    const post = await PostModel.editPost(req.params.id, title, content);
+    const post = await PostModel.updatePost(req.params.id, title, content);
     if (!post) {
       return res.status(404).json({ error: 'Post não encontrado.' });
     }
