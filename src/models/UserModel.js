@@ -1,9 +1,21 @@
 const pool = require("../config/database");
 const { get } = require("../routes/postRoutes");
 
-const getAllUsers = async () => {
-    const result = await pool.query("SELECT * FROM users");
-    return result.rows;
+const getAllUsers = async (name) => {
+    //Sem nome
+    if (!name) {
+        // Se não houver nome, retorna todos os bruxos
+        const result = await pool.query(
+            "SELECT * FROM users"
+        );
+        return result.rows;
+    } else {
+        // Se tiver, faça o filtro.
+        const result = await pool.query(
+            "SELECT * FROM users WHERE name ILIKE $1", [`%${name}%`]
+        );
+        return result.rows;
+    }
 };
 
 const getUsersById = async (id) => {
