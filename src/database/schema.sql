@@ -20,7 +20,7 @@ INSERT INTO users (name, email, password) VALUES
     ('Enzo', 'enzo@gmail.com', 'enzoo'),
     ('Alves', 'alves@gmail.com', 'alvess'),
     ('Turco', 'turco@gmail.com', 'turcoo');
-   
+
 INSERT INTO posts (title, content, user_id) VALUES 
     ('Post 1', 'Content of post 1', 1),
     ('Post 2', 'Content of post 2', 2),
