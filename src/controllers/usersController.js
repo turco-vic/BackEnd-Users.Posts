@@ -23,7 +23,7 @@ const getUserById = async (req, res) => {
   }
 }
 
-const createUser = async (req, res) => {
+/*const createUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
     const user = await UserModel.createUsers(name, email, password);
@@ -31,7 +31,18 @@ const createUser = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: "Erro ao criar o usuário!" });
   }
-}
+}*/
+
+const createUser = async (req, res) => {
+  try {
+      const { name, email } = req.body;
+      const photo = req.file ? req.file.filename : null;
+      const newuser = await UserModel.createUser(name, email, photo);
+      res.status(201).json(newuser);
+  } catch (error) {
+      res.status(500).json({ message: "Erro ao criar usúario." });
+  }
+};
 
 const updateUser = async (req, res) => {
   try {
