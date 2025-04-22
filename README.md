@@ -5,14 +5,16 @@ Este projeto é uma API para gerenciamento de usuários e posts. Ele permite cri
 ## Funcionalidades
 
 - **Usuários**:
-    - Criar um novo usuário.
     - Listar todos os usuários.
+    - Listar um usúario pelo ID
+    - Criar um novo usuário.    
     - Atualizar informações de um usuário.
     - Excluir um usuário.
 
 - **Posts**:
-    - Criar um novo post.
     - Listar todos os posts.
+    - Listar um post pelo ID
+    - Criar um novo post.
     - Atualizar um post existente.
     - Excluir um post.
 
@@ -54,12 +56,14 @@ Este projeto é uma API para gerenciamento de usuários e posts. Ele permite cri
 
 ### Usuários
 - `GET /users` - Lista todos os usuários.
+- `GET /users/:id` - Lista um usuário pelo ID
 - `POST /users` - Cria um novo usuário.
 - `PUT /users/:id` - Atualiza um usuário.
 - `DELETE /users/:id` - Exclui um usuário.
 
 ### Posts
 - `GET /posts` - Lista todos os posts.
+- `GET /posts/:id` - Lista um post pelo ID
 - `POST /posts` - Cria um novo post.
 - `PUT /posts/:id` - Atualiza um post.
 - `DELETE /posts/:id` - Exclui um post.
