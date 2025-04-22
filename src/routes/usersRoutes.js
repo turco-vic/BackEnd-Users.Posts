@@ -65,7 +65,7 @@ router.get("/:id", usersController.getUserById);
  *             properties:
  *               name:
  *                 type: string
- *               house_id:
+ *               user_id:
  *                 type: integer
  *               photo:
  *                 type: string

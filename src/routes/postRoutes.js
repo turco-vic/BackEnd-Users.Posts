@@ -64,7 +64,7 @@ router.get("/:id", postController.getPostById);
  *             properties:
  *               name:
  *                 type: string
- *               house_id:
+ *               user_id:
  *                 type: integer
  *               photo:
  *                 type: string
