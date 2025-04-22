@@ -7,8 +7,8 @@ router.use(apiKeyMiddleware);
 /**
  * @swagger
  * tags:
- *   name: Usúarios
- *   description: Gerenciamento de usúarios
+ *   name: Posts
+ *   description: Gerenciamento de posts
  */
 
 /**
